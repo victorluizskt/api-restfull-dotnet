@@ -16,7 +16,7 @@ namespace api_restful.Services.Implementations
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            
         }
 
         public List<Person> FindAll()
