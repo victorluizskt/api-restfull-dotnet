@@ -11,7 +11,7 @@ namespace api_restful.Services.Implementations
 
         Person Update(Person person);
 
-        void Delet(long id);
+        void Delete(long id);
 
         List<Person> FindAll();
     }
