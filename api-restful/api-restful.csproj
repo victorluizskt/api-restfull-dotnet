@@ -6,4 +6,10 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'RestWithASPNETUdemy' " />
+  <ItemGroup>
+    <None Remove="Controllers\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Model\" />
+  </ItemGroup>
 </Project>
