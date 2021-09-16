@@ -7,9 +7,13 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'RestWithASPNETUdemy' " />
   <ItemGroup>
-    <None Remove="Controllers\Model\" />
+    <None Remove="Model\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Implementations\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Model\" />
+    <Folder Include="Model\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Implementations\" />
   </ItemGroup>
 </Project>
