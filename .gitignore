@@ -5,6 +5,7 @@ Makefile.in
 config.make
 config.status
 aclocal.m4
+appsettings.json
 install-sh
 autom4te.cache/
 *.tar.gz
