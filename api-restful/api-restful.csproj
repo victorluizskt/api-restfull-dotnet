@@ -10,10 +10,18 @@
     <None Remove="Model\" />
     <None Remove="Services\" />
     <None Remove="Services\Implementations\" />
+    <None Remove="Model\Script\" />
+    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="Model\Context\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Implementations\" />
+    <Folder Include="Model\Script\" />
+    <Folder Include="Model\Context\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.0" />
   </ItemGroup>
 </Project>
