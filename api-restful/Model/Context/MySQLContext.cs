@@ -13,6 +13,8 @@ namespace api_restful.Model.Context
         {
         }
 
-        public DbSet<Person> persons { get; set; }
+        public DbSet<Person> Persons { get; set; }
+
+        public DbSet<Book> Book { get; set; }
     }
 }

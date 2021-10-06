@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using api_restful.Controllers.Model;
 
-namespace api_restful.Business.Implementations
+namespace api_restful.Repository.Implementations
 {
-    public interface IPersonService
+    public interface IPersonRepository
     {
         Person Create(Person person);
 
@@ -14,5 +14,7 @@ namespace api_restful.Business.Implementations
         void Delete(long id);
 
         List<Person> FindAll();
+
+        bool Exists(long id);
     }
 }

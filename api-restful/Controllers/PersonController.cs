@@ -1,5 +1,5 @@
-﻿using api_restful.Controllers.Model;
-using api_restful.Services.Implementations;
+﻿using api_restful.Business.Implementations;
+using api_restful.Controllers.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,15 +12,15 @@ namespace RestWithASPNETUdemy.Controllers
     {
 
         private readonly ILogger<PersonController> _logger;
-        private IPersonService _personService;
+        private IPersonBusiness _personBusiness;
+
         public PersonController(
             ILogger<PersonController> logger,
-            IPersonService personService
+            IPersonBusiness personBusiness
         )
         {
             _logger = logger;
-            _personService = personService;
-
+            _personBusiness = personBusiness;
         }
 
         #region 
@@ -28,7 +28,7 @@ namespace RestWithASPNETUdemy.Controllers
         public IActionResult Get(
         )
         {
-            return Ok(_personService.FindAll());
+            return Ok(_personBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
@@ -36,7 +36,7 @@ namespace RestWithASPNETUdemy.Controllers
             [FromRoute] long id
         )
         {
-            var person = _personService.FindById(id);
+            var person = _personBusiness.FindById(id);
 
             if(person == null)
             {
@@ -56,7 +56,7 @@ namespace RestWithASPNETUdemy.Controllers
                 return BadRequest();
             }
 
-            return Ok(_personService.Create(person));
+            return Ok(_personBusiness.Create(person));
         }
 
         [HttpPut]
@@ -69,7 +69,7 @@ namespace RestWithASPNETUdemy.Controllers
                 return BadRequest();
             }
 
-            return Ok(_personService.Update(person));
+            return Ok(_personBusiness.Update(person));
         }
 
         [HttpDelete("{id}")]
@@ -77,7 +77,7 @@ namespace RestWithASPNETUdemy.Controllers
             [FromRoute] long id
         )
         {
-            _personService.Delete(id);
+            _personBusiness.Delete(id);
             return NoContent();
         }
         #endregion

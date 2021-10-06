@@ -10,20 +10,34 @@
     <None Remove="Model\" />
     <None Remove="Services\" />
     <None Remove="Services\Implementations\" />
-    <None Remove="Model\Script\" />
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
     <None Remove="Model\Context\" />
     <None Remove="Microsoft.AspNetCore.Mvc.Versioning" />
+    <None Remove="Business %28copiar%29\" />
+    <None Remove="Evolve" />
+    <None Remove="Serilog" />
+    <None Remove="Serilog.AspNetCore" />
+    <None Remove="Serilog.Sinks.Console" />
+    <None Remove="Script\" />
+    <None Remove="db\migrations\" />
+    <None Remove="db\dataset\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Services\" />
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Model\Script\" />
+    <Folder Include="Business\" />
+    <Folder Include="Business\Implementations\" />
     <Folder Include="Model\Context\" />
+    <Folder Include="Repository\" />
+    <Folder Include="db\" />
+    <Folder Include="db\migrations\" />
+    <Folder Include="db\dataset\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+    <PackageReference Include="Evolve" Version="3.0.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
   </ItemGroup>
 </Project>

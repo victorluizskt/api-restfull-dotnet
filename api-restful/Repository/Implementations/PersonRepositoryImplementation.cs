@@ -1,30 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using api_restful.Controllers.Model;
 using api_restful.Model.Context;
 
-namespace api_restful.Services.Implementations
+namespace api_restful.Repository.Implementations
 {
-    public class PersonServiceImplementation : IPersonService
-    {
+    public class PersonRepositoryImplementation : IPersonRepository
+    { 
         private MySQLContext _context;
 
-        public PersonServiceImplementation(MySQLContext context)
-        {
+        public PersonRepositoryImplementation(MySQLContext context)
+        { 
             _context = context;
         }
 
         #region
         public List<Person> FindAll()
         {
-            return _context.persons.ToList();
+            return _context.Persons.ToList();
         }
 
         public Person FindById(long id)
         {
-            return _context.persons.SingleOrDefault(p => p.Id.Equals(id));
+            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
 
         public Person Create(Person person)
@@ -46,9 +45,9 @@ namespace api_restful.Services.Implementations
 
         public Person Update(Person person)
         {
-            if (!Exists(person.Id)) return new Person();
+            if (!Exists(person.Id)) return null;
 
-            var result = _context.persons.SingleOrDefault(p => p.Id.Equals(person.Id));
+            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
 
             if (result != null)
             {
@@ -71,13 +70,13 @@ namespace api_restful.Services.Implementations
 
         public void Delete(long id)
         {
-            var result = _context.persons.SingleOrDefault(p => p.Id.Equals(id));
+            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
 
             if (result != null)
             {
                 try
                 {
-                    _context.persons.Remove(result);
+                    _context.Persons.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception)
@@ -88,9 +87,9 @@ namespace api_restful.Services.Implementations
         }
         #endregion
 
-        private bool Exists(long id)
+        public bool Exists(long id)
         {
-            return _context.persons.Any(p => p.Id.Equals(id));
+            return _context.Persons.Any(p => p.Id.Equals(id));
         }
     }
- }
+}

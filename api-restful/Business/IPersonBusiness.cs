@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using api_restful.Controllers.Model;
 
-namespace api_restful.Services.Implementations
+namespace api_restful.Business.Implementations
 {
-    public interface IPersonService
+    public interface IPersonBusiness
     {
         Person Create(Person person);
 
